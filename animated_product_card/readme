@@ -1,0 +1,27 @@
+This is a animated product card made purely from HTML and CSS no javascript, it demonstrates an interactive animation which starts as a simple logo and, on hover, transforms into a detailed product-reveal card with several sequential animations.
+
+What happens:
+
+- Start as a simple Coca-Cola logo.
+- On hover the logo transforms into a rectangle and reveals the product.
+
+Features:
+
+Pure CSS: Animations handled by CSS transitions and keyframes.
+
+Shape Morphing: The main container transitions it's border-radius, width and background-color.
+
+Sequenced-animations: Animations are sequenced by transitions-delay to ensure animations do not overlap.
+
+Compound Transforms: The content animates using a combination of opacity, scale and translateX.
+
+Parent Hover Selector: All animations are triggered by a single :hover on the main container.
+
+Make sure you have this folder structure to run this project without any issues.
+
+project-folder/
+├── index.html  (both the HTML and CSS files should be in the same directory)
+├── style.css
+└── assets/     (CSS expects this folder in the same directory for the images to be displayed correctly.)
+    ├── logo.png     (The round Coca-Cola logo)
+    ├── bottle.png   (The product bottle image)
