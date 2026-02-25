@@ -1,0 +1,47 @@
+# FOOshi - Restaurant App UI
+
+A responsive restaurant app interface prototype built with pure HTML and CSS. This project demonstrates modern UI design principles and CSS animations without any JavaScript.
+
+## Features
+
+### Layout
+- iPhone 16-style transparent mockup frame
+- Responsive grid layout for food items
+- Custom scrollable content area with hidden scrollbar
+- Bottom navigation bar with interactive elements
+
+### UI Components
+- Dynamic search bar with expand animation on hover
+- Category filter tags (Ramen, Sushi, Rolls) with hover effects
+- Hero section with gradient background
+- Food item cards with hover animations
+- Navigation bar with icon animations
+
+### Design Elements
+- Custom SVG icons for status bar
+- Linear gradient backgrounds
+- Custom button animations
+- Smooth hover transitions
+- Shadow effects for depth
+
+### Visual Elements
+- Status bar with time and system icons
+- Expandable search functionality
+- Category filter capsules
+- Food item grid with images
+- Bottom navigation with notification, cart, home, orders, and settings icons
+
+## Technical Details
+- Built with semantic HTML5
+- Pure CSS3 with modern features:
+  - CSS Grid
+  - Flexbox
+  - Custom Properties (variables)
+  - Transform animations
+  - Linear gradients
+  - Box shadows
+  - Border radius
+  - Transitions
+
+## Screenshot
+![Fooshi App Preview](./preview/Screenshot%202025-11-10%20184234.png)
