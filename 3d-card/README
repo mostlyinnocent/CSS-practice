@@ -1,0 +1,35 @@
+Making a 3d card that tilts on mouse positioning.
+
+This card displays contains the following:
+Nike logo
+Price tag
+product image
+product info (name and description)
+Add to cart and Buy now buttons
+
+How I achieved the result:
+
+Making the main Container:
+-> Create a div which will be our card, set the display to flex and flex direction to column that way the elements in the card will be displayed one after the other.
+
+Setting up price tag and logo.
+-> Because i wanted the logo and price tag to be shown in a row I used flex box display again and set the justify content to space around.
+
+-> The container which contains the logo, has a fixed size. On the image tag I used the contain method so that the logo can be displayed in a small space. If I had used cover instead of contain method the logo would have been cropped and not displayed fully.
+
+-> Then added margin accordingly so that the elements have some space from the edges of the card.
+
+Setting up the product Image:
+-> Created a container div for the image, setting flex= 2, so that it takes up unused space by other elements. This way no unnecessary gap is needed and the item is resized accordingly to other elements that are added below it.
+
+-> The img tag had the cover method to show the product image in it's full aspect ratio, since it had not fixed height or width and I wanted the product image to be displayed completely.
+
+Setting up the product name and description:
+-> created a h3 and p tag and typed in the corresponding text, formatted them to fit into the card container nicely.
+
+Setting up the cart and buying options:
+-> created a container func-buttons
+-> btn-1 and btn-2 are the corresponding buttons.
+
+Creating the 3D lift on hover effect:
+-> To create the 3D effect i had to remove the overlay: hidden clips everything that extends beyond the element's boundaries. When using translateZ() pushes the items forward, outside the card's original boundary. Without overlay: hidden elements are free to extend beyond the original boundaries hence creating the 3d-effect.

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background: #000000;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            perspective: 1000px;
+            gap: 70px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+/* Container card */
+        .card {
+            background-color: rgb(255, 255, 255);
+            width: 300px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0px 0px 60px 0px rgb(21, 0, 255); /*Setting up the box shadow*/
+            display: flex;
+            flex-direction: column; /*So that can be aligned in a column view inside the card*/
+            transition: transform 0.6s ease;
+            transform-style: preserve-3d;
+            /* overflow: hidden;  */
+        }
+
+        .card:hover {
+            transform: rotateY(45deg) rotateX(25deg);
+        }
+
+        .price-logo {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px;
+            transform: translateZ(0px);
+            transition: transform 0.6s ease;
+            transform-style: preserve-3d;
+        }
+
+        .card:hover .price-logo {
+            transform: translateZ(40px);
+        }
+
+        /* Logo container element */
+        .brand-logo { 
+            height: 40px;
+            width: 80px;
+        }
+
+        /* logo image */
+        .brand-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+
+        .price-tag {
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 30%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #5a4ba2 100%);
+            border-radius: 10px;
+        }
+
+        .price-tag p {
+            color: white;
+        }
+
+        .product-image {
+            flex: 2;
+            transform-style: preserve-3d;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: translateZ(0px);
+            transition: transform 0.5s ease;
+        }
+
+        .card:hover .product-image img {
+            transform: translateZ(70px);
+        }
+
+        .product-info {
+            margin-top: -40px;
+            flex: 3;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 10px 15px;
+            transform-style: preserve-3d;
+        }
+
+        .product-name {
+            font-size: 1.1em;
+            margin: 0px;
+        }
+
+        .product-description {
+            font-size: 0.85em;
+            margin-top: 4px;
+            overflow: hidden;
+        }
+
+        .func-buttons {
+            display: flex;
+            justify-content: space-between;
+            transform-style: preserve-3d;
+        }
+
+        .btn-1 {
+            width: 45%;
+            background: #4169E1;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #5a4ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 0;
+            cursor: pointer;
+            transform: translateZ(0px);
+            transition: transform 0.5s ease;
+        }
+
+        .card:hover .btn-1 {
+            transform: translateZ(30px);
+        }
+
+        .btn-2 {
+            width: 45%;
+            background: #4169E1;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #5a4ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 0 10px;
+            cursor: pointer;       
+            transform: translateZ(0px);
+            transition: transform 0.5s ease;    
+        }
+
+        .card:hover .btn-2 {
+            transform: translateZ(30px);
+        }
+
+        .card-2 {
+            background-color: rgb(255, 255, 255);
+            width: 300px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0px 0px 60px 0px rgb(183, 1, 1); /*Setting up the box shadow*/
+            display: flex;
+            flex-direction: column; /*So that can be aligned in a column view inside the card*/
+            transition: transform 0.6s ease;
+            transform-style: preserve-3d; /* For depth*/
+        }
+
+        .card-2:hover {
+            transform: rotateY(-25deg) rotateX(25deg);
+        }
+
+        .price-logo {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px;
+            transform: translateZ(0px); /*So that it lifts only on hover*/
+            transition: transform 0.6s ease;
+            transform-style: preserve-3d;
+        }
+
+        .card-2:hover .price-logo {
+            transform: translateZ(30px);
+        }
+
+        .brand-logo {
+            height: 40px;
+            width: 80px;
+        }
+
+        .brand-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .card-2:hover .brand-logo img {
+            transform: translateZ(30px);
+        }
+
+        .card-2 .price-tag {
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 30%;
+            background: #f00000;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 50%, #c44569 100%);
+            border-radius: 10px;
+        }
+
+        .price-tag p {
+            color: white;
+        }
+
+        .product-image {
+            flex: 2;
+        }
+
+        .card-2 .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: translateZ(0px);
+            transition: transform 0.5s ease;
+        }
+
+        .card-2:hover .product-image img {
+            transform: translateZ(60px); 
+        }
+
+        /* Container for product name and description */
+        .card-2 .product-info {
+            margin-top: 0;
+            flex: 3;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 10px 15px;
+        }
+
+        .product-name {
+            font-size: 1.1em;
+            margin: 0px;
+        }
+
+        .product-description {
+            font-size: 0.85em;
+            margin-top: 4px;
+            overflow: hidden;
+        }
+
+        /* Flexbox to contain the add to cart and buy now buttons */
+        .func-buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .card-2 .btn-1 {
+            width: 45%;
+            background: #f00000;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 50%, #c44569 100%);
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 0;
+            cursor: pointer;
+            transition: transform 0.5s ease;
+        }
+
+        .card-2 .btn-2 {
+            width: 45%;
+            background: #f00000;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 50%, #c44569 100%);
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 0 10px;
+            cursor: pointer;  
+            transition: transform 0.5s ease;         
+        }
+
+        .card-2:hover .btn-1 {
+            transform: translateZ(40px)
+        }
+
+        .card-2:hover .btn-2 {
+            transform: translateZ(40px)
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="price-logo">
+            <div class="brand-logo">
+                <img src="/3d-card/images/nike-icon.png" alt="">
+            </div>
+            <div class="price-tag">
+                    <p>$45</p>
+            </div>
+        </div>
+        <div class="product-image">
+            <img src="/3d-card/images/shoe.png" alt="item.img">
+        </div>
+        <div class="product-info">
+            <h3 class="product-name">Nike Air Zoom Pegasus 36</h3>
+            <p class="product-description">The iconic Nike Air Zoom Pegasus 36 returns with more perforations and engineered mesh in the upper, strategically targeting breathability in high-heat areas. A slimmer heel collar and tongue reduce bulk without compromising comfort, while exposed Flywire cables give you a snug fit at higher speeds.
+            </p>
+            <div class="func-buttons">
+                <button class="btn-1"> Add to cart </button>
+                <button class="btn-2"> Buy Now </button>
+            </div>
+        </div>
+    </div>
+    <div class="card-2">
+        <div class="price-logo">
+            <div class="brand-logo">
+                <img src="/3d-card/images/nike-icon.png" alt="">
+            </div>
+            <div class="price-tag">
+                    <p>$45</p>
+            </div>
+        </div>
+        <div class="product-image">
+            <img src="/3d-card/images/red-nike.png" alt="item.img">
+        </div>
+        <div class="product-info">
+            <h3 class="product-name">Nike Air Max Tavas Rio</h3>
+            <p class="product-description">The Nike Air Max Tavas Rio is a sneaker with a modern, retro-inspired design, known for its "Rio Teal" colorway. Key features include a light and breathable upper with a mix of materials like mesh, no-sew overlays, and synthetic suede, an iconic Max Air unit for cushioning and support, and flex grooves in the outsole for a natural range of motion. 
+            </p>
+            <div class="func-buttons">
+                <button class="btn-1"> Add to cart </button>
+                <button class="btn-2"> Buy Now </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+                                    <!--(\_/)
+                                        (•.•)
+                                        />>❤️ -->
